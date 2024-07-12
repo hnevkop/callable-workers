@@ -24,7 +24,7 @@ class Worker implements Callable<Result> {
         log.info("Doing some hard work for task: {} on thread: {}", task, currentThread.getName());
         Thread.sleep(500);
 
-        // Set the result of the work
+        // DUMMY result of the work
         int numberOfIds = task.taskParameter();
         ID[] ids = new ID[numberOfIds];
         for (int i = 0; i < numberOfIds; i++) {

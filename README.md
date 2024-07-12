@@ -8,13 +8,13 @@ java 11
 gradle 7.2
 
 ## Description of the compoments:
-Worker - A worker is a class that implements Callable interface. It is responsible for doing some work and returning a result. For demo purposes set the sleep time to simulate the work.
-WorkersExecutor - A class that is responsible for executing the workers. It takes a list of workers and executes them in parallel, collects the results. 
-WorkerService - A class that is responsible for calling the workers and getting the results. It uses WorkersExecutor to execute the workers. Demo purposes only. 
+- Worker - A worker is a class that implements Callable interface. It is responsible for doing some work and returning a result. For demo purposes set the sleep time to 500ms to simulate the work.
+- WorkersExecutor - A class that is responsible for executing the workers. It takes a list of workers and executes them in parallel, collects the results. 
+- WorkerService - A class that is responsible for calling the workers and getting the results. It uses WorkersExecutor to execute the workers. Demo purposes only. 
 
 ## Running the application
 
-To run the application, execute the following command in the root directory of the project:
+To run the application, execute the java class in the root directory of the project:
 ```shell
 CallWorkersApplication.java
 ```
