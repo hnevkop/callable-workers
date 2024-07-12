@@ -21,9 +21,15 @@ CallWorkersApplication.java
 
 ## Scaling the application
 See Workers Executor class for the number of threads to be used in the application
-, as well as the number of workers to be used. By default it is set to 10 workers and 5 threads. 
-Execution results is then: 1000 req/sec with 10 workers and 5 threads.
+, as well as the number of workers to be used. By default it is set to 10 workers and 5 threads.
+Execution results is printed to the console.
 
+***Basic description:*** 
+1. WorkerExecutor is created with a number of threads
+2. Task(s) is submitted to the executor
+3. New Worker for the task is created and do the work. (This is generally non blocking since a new thread from the thread pool is used, or reused some existing thread from the pool),
+   Future from the worker is saved to the list of futures.
+4. WorkersExecutor method executeAll collects the results from the futures and returns the list of results.
 
 
 

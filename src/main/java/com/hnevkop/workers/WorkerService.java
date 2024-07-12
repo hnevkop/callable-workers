@@ -15,24 +15,24 @@ public class WorkerService {
   public List<ID> executeWorkers() {
 
     long startTime = System.currentTimeMillis();
-    WorkersExecutor multiWorker = new WorkersExecutor(5);
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(50));
-    multiWorker.addTask(new Task(50));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(50));
-    multiWorker.addTask(new Task(50));
-    multiWorker.addTask(new Task(100));
-    multiWorker.addTask(new Task(100));
+    WorkersExecutor workersExecutor = new WorkersExecutor(5);
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(50));
+    workersExecutor.addTask(new Task(50));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(50));
+    workersExecutor.addTask(new Task(50));
+    workersExecutor.addTask(new Task(100));
+    workersExecutor.addTask(new Task(100));
     // add tasks and threads to scale the application ... you get the point
 
     List<ID> results = Collections.synchronizedList(new ArrayList<>());
     try {
-      multiWorker.executeAll(
+      workersExecutor.executeAll(
           result -> {
             System.out.println("Finished with results: " + result.response().length);
             results.addAll(Arrays.stream(result.response()).toList());
