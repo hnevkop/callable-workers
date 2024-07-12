@@ -28,7 +28,7 @@ public class WorkerService {
     multiWorker.addTask(new Task(50));
     multiWorker.addTask(new Task(100));
     multiWorker.addTask(new Task(100));
-    // add tasks amd threads to scale the application ... you get the point
+    // add tasks and threads to scale the application ... you get the point
 
     List<ID> results = Collections.synchronizedList(new ArrayList<>());
     try {
