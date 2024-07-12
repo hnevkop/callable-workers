@@ -44,3 +44,7 @@ For further reference, please consider the following sections:
 These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+
+### build status
+
+[![Java CI with Gradle](https://github.com/hnevkop/callable-workers/actions/workflows/gradle.yml/badge.svg)](https://github.com/hnevkop/callable-workers/actions/workflows/gradle.yml)
