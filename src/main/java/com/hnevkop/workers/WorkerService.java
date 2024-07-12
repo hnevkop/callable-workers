@@ -32,14 +32,17 @@ public class WorkerService {
 
     List<ID> results = Collections.synchronizedList(new ArrayList<>());
     try {
-        multiWorker.executeAll(result -> { System.out.println("Finished with results: " + result.response().length);
-        results.addAll(Arrays.stream(result.response()).toList());
-      });
+      multiWorker.executeAll(
+          result -> {
+            System.out.println("Finished with results: " + result.response().length);
+            results.addAll(Arrays.stream(result.response()).toList());
+          });
     } catch (Exception e) {
       log.error("Error executing workers", e);
     }
     long elapsedTime = (System.currentTimeMillis() - startTime) / 1000;
-    log.info( "Application finished with no. of results: {} in seconds: {}", results.size(), elapsedTime);
+    log.info(
+        "Application finished with no. of results: {} in seconds: {}", results.size(), elapsedTime);
     return results;
   }
 }
