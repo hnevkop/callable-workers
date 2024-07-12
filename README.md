@@ -4,7 +4,7 @@ Callable workers application is a demo of using Java Future and Callbacks to sca
 e.g. to call an external services and get the response.
 
 ## Requirements
-java 11
+required java 17 or higher (build with java 21) 
 gradle 7.2
 
 ## Description of the compoments:
